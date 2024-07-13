@@ -16,120 +16,68 @@
 
     <!--css time line-->
     <style>
-    .horizontal-timeline .items {
-  border-top: 3px solid #e9ecef;
+  body{margin-top:20px;}
+.timeline-steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
 }
 
-.horizontal-timeline .items .items-list {
-  display: block;
-  position: relative;
-  text-align: center;
-  padding-top: 70px;
-  margin-right: 0;
+.timeline-steps .timeline-step {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 1rem
 }
 
-.horizontal-timeline .items .items-list:before {
-  content: "";
-  position: absolute;
-  height: 36px;
-  border-right: 2px dashed #dee2e6;
-  top: 0;
+@media (min-width:768px) {
+    .timeline-steps .timeline-step:not(:last-child):after {
+        content: "";
+        display: block;
+        border-top: .25rem dotted #3b82f6;
+        width: 3.46rem;
+        position: absolute;
+        left: 7.5rem;
+        top: .3125rem
+    }
+    .timeline-steps .timeline-step:not(:first-child):before {
+        content: "";
+        display: block;
+        border-top: .25rem dotted #3b82f6;
+        width: 3.8125rem;
+        position: absolute;
+        right: 7.5rem;
+        top: .3125rem
+    }
 }
 
-.horizontal-timeline .items .items-list .event-date {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  right: 0;
-  width: 75px;
-  margin: 0 auto;
-  font-size: 0.9rem;
-  padding-top: 8px;
+.timeline-steps .timeline-content {
+    width: 10rem;
+    text-align: center
 }
 
-@media (min-width: 1140px) {
-  .horizontal-timeline .items .items-list {
+.timeline-steps .timeline-content .inner-circle {
+    border-radius: 1.5rem;
+    height: 1rem;
+    width: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b82f6
+}
+
+.timeline-steps .timeline-content .inner-circle:before {
+    content: "";
+    background-color: #3b82f6;
     display: inline-block;
-    width: 24%;
-    padding-top: 45px;
-  }
-
-  .horizontal-timeline .items .items-list .event-date {
-    top: -40px;
-  }
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem;
+    border-radius: 6.25rem;
+    opacity: .5
 }
 
-/* Điều kiện xét tuyển */
-.circle {
-  padding: 13px 20px;
-  border-radius: 50%;
-  background-color: #ED8D8D;
-  color: #fff;
-  max-height: 50px;
-  z-index: 2;
-}
-
-.how-it-works.row .col-2 {
-  align-self: stretch;
-}
-.how-it-works.row .col-2::after {
-  content: "";
-  position: absolute;
-  border-left: 3px solid #ED8D8D;
-  z-index: 1;
-}
-.how-it-works.row .col-2.bottom::after {
-  height: 50%;
-  left: 50%;
-  top: 50%;
-}
-.how-it-works.row .col-2.full::after {
-  height: 100%;
-  left: calc(50% - 3px);
-}
-.how-it-works.row .col-2.top::after {
-  height: 50%;
-  left: 50%;
-  top: 0;
-}
-
-
-.timeline div {
-  padding: 0;
-  height: 40px;
-}
-.timeline hr {
-  border-top: 3px solid #ED8D8D;
-  margin: 0;
-  top: 17px;
-  position: relative;
-}
-.timeline .col-2 {
-  display: flex;
-  overflow: hidden;
-}
-.timeline .corner {
-  border: 3px solid #ED8D8D;
-  width: 100%;
-  position: relative;
-  border-radius: 15px;
-}
-.timeline .top-right {
-  left: 50%;
-  top: -50%;
-}
-.timeline .left-bottom {
-  left: -50%;
-  top: calc(50% - 3px);
-}
-.timeline .top-left {
-  left: -50%;
-  top: -50%;
-}
-.timeline .right-bottom {
-  left: 50%;
-  top: calc(50% - 3px);
-}
 
   </style>
     <!--css time line-->
@@ -196,7 +144,7 @@
           </nav>
         </div>
       </header>
-
+     
       <!-- Slider-->
       <section class="section" id="home">
         <div class="swiper-container swiper-slider swiper-slider_fullheight" data-simulate-touch="false" data-loop="true" data-autoplay="5000">
@@ -293,87 +241,83 @@
       <!-- Time-line-->          
      
       <section class="section-md bg-default text-center">
-        <div class="container">
-          <div class="row justify-content-lg-center">
-            <div class="col-lg-12 col-xl-8">
-              <h3 class="heading-decorated">Thời gian xét tuyển</h3>
-              
-            </div>
-          </div>
-          <div class="container-fluid py-5">
-
-            <div class="row">
-              <div class="col-lg-12">
-          
-                <div class="horizontal-timeline">
-          
-                  <ul class="list-inline items">
-                    <li class="list-inline-item items-list">
-                      <div class="px-4">
-                        <div class="event-date badge bg-info">Tháng 7 và Tháng 10</div>
-                        <h5 class="pt-2">Nộp hồ sơ xét tuyển </h5>
-                        <p class="text-muted">Thu hồ sơ tại học viện ngân hàng và online qua website khoa</p>
-                        <div>
-                          <a href="#" data-mdb-ripple-init class="btn btn-primary btn-sm">Read more</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-inline-item items-list">
-                      <div class="px-4">
-                        <div class="event-date badge bg-success">Xét tuyển hồ sơ</div>
-                        <h5 class="pt-2">Event Two</h5>
-                        <p class="text-muted">Everyone realizes why a new common language one could refuse translators.
-                        </p>
-                        <div>
-                          <a href="#" data-mdb-ripple-init class="btn btn-primary btn-sm">Read more</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-inline-item items-list">
-                      <div class="px-4">
-                        <div class="event-date badge bg-danger">Thông báo trúng tuyển</div>
-                        <h5 class="pt-2">Event Three</h5>
-                        <p class="text-muted">If several languages coalesce the grammar of the resulting simple and
-                          regular</p>
-                        <div>
-                          <a href="#" data-mdb-ripple-init class="btn btn-primary btn-sm">Read more</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-inline-item items-list">
-                      <div class="px-4">
-                        <div class="event-date badge bg-warning">Nhập học</div>
-                        <h5 class="pt-2">Event Four</h5>
-                        <p class="text-muted">Languages only differ in their pronunciation and their most common words.
-                        </p>
-                        <div>
-                          <a href="#" data-mdb-ripple-init class="btn btn-primary btn-sm">Read more</a>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-          
+          <div class="container">                      
+                <div class="row text-center justify-content-center mb-5">
+                    <div class="col-xl-6 col-lg-8">
+                        <h3 class="font-weight-bold">Thời gian xét tuyển</h3>
+                        <p class="text-muted">Các mốc thời gian xét tuyển hồ sơ chương trình thạc sĩ Phân tích kinh doanh và Quản trị hệ thống thông tin.</p>
+                    </div>
                 </div>
-          
-              </div>
-            </div>
-          
-          </div>
             
-          <!--/div-->
-        </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                            <div class="timeline-step">
+                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
+                                    <div class="inner-circle"></div>
+                                    <p class="h6 mt-3 mb-1">2003</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
+                                    <div class="inner-circle"></div>
+                                    <p class="h6 mt-3 mb-1">2004</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                                    <div class="inner-circle"></div>
+                                    <p class="h6 mt-3 mb-1">2005</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
+                                    <div class="inner-circle"></div>
+                                    <p class="h6 mt-3 mb-1">2010</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step mb-0">
+                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
+                                    <div class="inner-circle"></div>
+                                    <p class="h6 mt-3 mb-1">2020</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
       </section>
       <!-- Phương thức xét tuyển-->
-      <section class="section-md bg-default">
+      <section class="section-md bg-default" style="background: #eef4f6;">       
+
         <div class="container">
           <div class="row justify-content-lg-center text-center">
             <div class="col-lg-12 col-xl-8">
               <h3 class="heading-decorated">Điều kiện dự tuyển</h3>              
             </div>
           </div>
-          <div class="row justify-content-lg-center">
-            <div class="col-lg-12">
-              <h5>Yêu cầu chung</h5>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#ycc">Yêu cầu chung</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#xtt">Điều kiện xét tuyển thẳng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#xths">Điều kiện xét tuyển theo hồ sơ </a>
+            </li>
+          </ul>
+        
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="ycc" class="container tab-pane active"><br>
+              <h3>Yêu cầu chung</h3>
               <p>a) Đã tốt nghiệp hoặc đã đủ điều kiện công nhận tốt nghiệp đại học (hoặc trình độ tương đương trở lên) ngành đúng, ngành gần với ngành đăng ký dự tuyển; đối với chương trình định hướng nghiên cứu yêu cầu hạng tốt nghiệp từ khá trở lên hoặc có công bố khoa học liên quan đến lĩnh vực sẽ học tập, nghiên cứu;
                 <br>
                 Ngành đúng với ngành dự tuyển bao gồm các ngành trong cùng một nhóm ngành trong Danh mục ngành đào tạo trình độ đại học tại Phụ lục I ban hành kèm theo Thông tư số 09/2022/TT-BGDĐT ngày 06 tháng 6 năm 2022 quy định danh mục thống kê ngành đào tạo của giáo dục đại học.
@@ -389,58 +333,31 @@
                 đ) Đáp ứng các yêu cầu khác của chuẩn chương trình đào tạo do Bộ Giáo dục và Đào tạo ban hành và theo quy định của chương trình đào tạo;
                 <br>
                 e) Người dự tuyển nếu có bằng tốt nghiệp đại học do cơ sở đào tạo nước ngoài cấp phải thực hiện thủ tục công nhận văn bằng theo quy định hiện hành của Bộ Giáo dục và Đào tạo.</p>
-                    
+
             </div>
-          </div>  
-        <!--first section-->
-        <div class="row align-items-center how-it-works d-flex">
-          <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
-            <div class="circle font-weight-bold">1</div>
-          </div>
-          <div class="col-lg-10">
-            <h5>Điều kiện xét tuyển thẳng</h5>
-            <p class="mb-0">
-            a) Đã tốt nghiệp hoặc đã đủ điều kiện công nhận tốt nghiệp đại học (hoặc trình độ tương đương trở lên) trong thời gian không quá 02 năm tính đến ngày đăng ký dự tuyển, hạng tốt nghiệp từ Khá trở lên, ngành phù hợp với ngành đăng ký dự tuyển;
-            <br>
-            b) Đáp ứng một trong các yêu cầu về năng lực ngoại ngữ sau:
-            <br>
-          - Bằng tốt nghiệp trình độ đại học trở lên ngành Ngôn ngữ Anh; hoặc bằng tốt nghiệp trình độ đại học trở lên mà chương trình được thực hiện chủ yếu bằng tiếng Anh;
-          <br>
-          - Bằng tốt nghiệp trình độ đại học trở lên do Học viện Ngân hàng cấp trong thời gian không quá 02 năm tính đến ngày đăng ký dự tuyển mà chuẩn đầu ra của chương trình đã đáp ứng yêu cầu ngoại ngữ đạt trình độ Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam;
-          <br>
-          - Một trong các văn bằng hoặc chứng chỉ ngoại ngữ đạt trình độ tương đương Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam quy định tại Phụ lục số 01 hoặc các chứng chỉ tương đương khác do Bộ Giáo dục và Đào tạo công bố, còn hiệu lực tính đến ngày đăng ký dự tuyển.
-        </p>
-      </div>
-        </div>
-        <!--path between 1-2-->
-        <div class="row timeline">
-          <div class="col-2">
-            <div class="corner top-right"></div>
-          </div>
-          <div class="col-8">
-            <hr/>
-          </div>
-          <div class="col-2">
-            <div class="corner left-bottom"></div>
-          </div>
-        </div>
-        <!--second section-->
-        <div class="row align-items-center justify-content-end how-it-works d-flex">
-          <div class="col-10 text-right">
-            <h5>Điều kiện xét tuyển theo hồ sơ</h5>
-            <p>a) Phương thức xét tuyển theo hồ sơ áp dụng đối với những ứng viên không đáp ứng điều kiện xét tuyển thẳng quy định tại mục 4.2 trên.
+            <div id="xtt" class="container tab-pane fade"><br>
+              <h3>Điều kiện xét tuyển thẳng</h3>
+              <p><p class="mb-0">
+                a) Đã tốt nghiệp hoặc đã đủ điều kiện công nhận tốt nghiệp đại học (hoặc trình độ tương đương trở lên) trong thời gian không quá 02 năm tính đến ngày đăng ký dự tuyển, hạng tốt nghiệp từ Khá trở lên, ngành phù hợp với ngành đăng ký dự tuyển;
+                <br>
+                b) Đáp ứng một trong các yêu cầu về năng lực ngoại ngữ sau:
+                <br>
+              - Bằng tốt nghiệp trình độ đại học trở lên ngành Ngôn ngữ Anh; hoặc bằng tốt nghiệp trình độ đại học trở lên mà chương trình được thực hiện chủ yếu bằng tiếng Anh;
               <br>
-              b) Ứng viên phải làm 01 bài luận liên quan đến ngành đăng ký dự tuyển. Quy định cụ thể về bài luận xem tại Phụ lục 4 trong thông báo tuyển sinh sau đại học.
+              - Bằng tốt nghiệp trình độ đại học trở lên do Học viện Ngân hàng cấp trong thời gian không quá 02 năm tính đến ngày đăng ký dự tuyển mà chuẩn đầu ra của chương trình đã đáp ứng yêu cầu ngoại ngữ đạt trình độ Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam;
               <br>
-              c) Ứng viên phải tham dự kỳ thi đánh giá năng lực ngoại ngữ do Học viện Ngân hàng tổ chức. Ứng viên được miễn thi nếu đáp ứng một trong các yêu cầu quy định tại điểm b mục 4.2.</p>
-          </div>
-          <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
-            <div class="circle font-weight-bold">2</div>
-          </div>
-        </div>
-        
-        
-            
+              - Một trong các văn bằng hoặc chứng chỉ ngoại ngữ đạt trình độ tương đương Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam quy định tại Phụ lục số 01 hoặc các chứng chỉ tương đương khác do Bộ Giáo dục và Đào tạo công bố, còn hiệu lực tính đến ngày đăng ký dự tuyển.
+            </p>
+            </div>
+            <div id="xths" class="container tab-pane fade"><br>
+              <h3>Điều kiện xét tuyển theo hồ sơ</h3>
+              <p>a) Phương thức xét tuyển theo hồ sơ áp dụng đối với những ứng viên không đáp ứng điều kiện xét tuyển thẳng quy định tại mục 4.2 trên.
+                <br>
+                b) Ứng viên phải làm 01 bài luận liên quan đến ngành đăng ký dự tuyển. Quy định cụ thể về bài luận xem tại Phụ lục 4 trong thông báo tuyển sinh sau đại học.
+                <br>
+                c) Ứng viên phải tham dự kỳ thi đánh giá năng lực ngoại ngữ do Học viện Ngân hàng tổ chức. Ứng viên được miễn thi nếu đáp ứng một trong các yêu cầu quy định tại điểm b mục 4.2.</p>
+            </div>
+          </div>           
         </div>
       </section>  
       <!-- Chuyên ngành phân tích kinh doanh-->
@@ -582,7 +499,7 @@
         </div>
       </section>
     <!-- Bạn nhận dudowwjc gì sau khoa shocj-->
-    <section class="section-md bg-gray-lighter text-center" style="background-color: rgb(185, 182, 191);">
+    <section class="section-md bg-gray-lighter text-center" style="background-color: rgb(185, 182, 191); padding-top:50px;">
       <div class="container">
         <h4 class="heading-decorated">Bạn nhận được gì sau khóa học</h4>
         <div class="row row-30 justify-content-center offset-top-2">
@@ -591,46 +508,94 @@
           <div class="col-sm-10 col-lg-6">
             <!-- Blurb circle-->
             <article class="blurb blurb-circle">
-              <div class="unit flex-row unit-spacing-md wow fadeInRight" data-wow-delay="0.1s">
+              <div class="unit flex-row unit-spacing-md wow " data-wow-delay="0.1s">
                 <div class="unit-left">
-                  <div class="blurb-circle__icon"><span class="icon linearicons-feather"></span></div>
+                  <div class="blurb-circle__icon"><span class="icon linearicons-sun"></span></div>
                 </div>
                 <div class="unit-body">
-                  <p class="blurb__title heading-6">Design creation</p>
-                  <p>Firstly, our designers create the concept of a template, which can be changed and modified.</p>
+                  <p class="blurb__title heading-6">Kiến thức chuyên sâu:</p>
+                  <p>Hiểu biết toàn diện và sâu rộng về các khía cạnh khác nhau của phân tích kinh doanh hay quản trị hệ thống thông tin hiện đại</p>
                 </div>
               </div>
             </article>
             <!-- Blurb circle-->
             <article class="blurb blurb-circle">
-              <div class="unit flex-row unit-spacing-md wow fadeInRight" data-wow-delay="0.2s">
+              <div class="unit flex-row unit-spacing-md wow " data-wow-delay="0.2s">
                 <div class="unit-left">
-                  <div class="blurb-circle__icon"><span class="icon linearicons-menu3"></span></div>
+                  <div class="blurb-circle__icon"><span class="icon linearicons-city"></span></div>
                 </div>
                 <div class="unit-body">
-                  <p class="blurb__title heading-6">Development</p>
-                  <p>Then our developers begin to work on implementing the template’s final look and features.</p>
+                  <p class="blurb__title heading-6">Kiến thức về công nghệ mới:</p>
+                  <p> Cập nhật với các công nghệ mới nhất trong lĩnh vực quản trị hệ thống thông tin và phân tích kinh doanh, như trí tuệ nhân tạo, học máy, và blockchain...</p>
                 </div>
               </div>
             </article>
             <!-- Blurb circle-->
             <article class="blurb blurb-circle">
-              <div class="unit flex-row unit-spacing-md wow fadeInRight" data-wow-delay="0.3s">
+              <div class="unit flex-row unit-spacing-md wow " data-wow-delay="0.3s">
                 <div class="unit-left">
-                  <div class="blurb-circle__icon"><span class="icon linearicons-bag2"></span></div>
+                  <div class="blurb-circle__icon"><span class="icon linearicons-lighter"></span></div>
                 </div>
                 <div class="unit-body">
-                  <p class="blurb__title heading-6">Testing</p>
-                  <p>Finally, our QA experts make sure that everything works perfectly just as you would expect.</p>
+                  <p class="blurb__title heading-6">Kỹ năng tư duy chiến lược:</p>
+                  <p>Phát triển khả năng tư duy chiến lược và ra quyết định dựa trên dữ liệu và công nghệ để giải quyết các vấn đề của tổ chức trong thực tế.</p>
                 </div>
               </div>
             </article>
+            <!-- Blurb circle-->
+            <article class="blurb blurb-circle">
+              <div class="unit flex-row unit-spacing-md wow " data-wow-delay="0.3s">
+                <div class="unit-left">
+                  <div class="blurb-circle__icon"><span class="icon linearicons-hammer-wrench"></span></div>
+                </div>
+                <div class="unit-body">
+                  <p class="blurb__title heading-6">Kinh nghiệm thực tế:</p>
+                  <p>Thực hiện các dự án thực tế, làm việc với dữ liệu thật và các tình huống kinh doanh cụ thể, giúp bạn áp dụng lý thuyết vào thực tiễn.</p>
+                </div>
+              </div>
+            </article>
+          <!-- Blurb circle-->
+          <article class="blurb blurb-circle">
+            <div class="unit flex-row unit-spacing-md wow " data-wow-delay="0.3s">
+              <div class="unit-left">
+                <div class="blurb-circle__icon"><span class="icon linearicons-bag2"></span></div>
+              </div>
+              <div class="unit-body">
+                <p class="blurb__title heading-6">Cơ hội nghề nghiệp: </p>
+                <p>Kết nối với các giảng viên, bạn học, và chuyên gia trong ngành, mở rộng mạng lưới quan hệ và cơ hội nghề nghiệp.</p>
+              </div>
+            </div>
+          </article>
+          <!-- Blurb circle-->
+          <article class="blurb blurb-circle">
+            <div class="unit flex-row unit-spacing-md wow " data-wow-delay="0.3s">
+              <div class="unit-left">
+                <div class="blurb-circle__icon"><span class="icon linearicons-user"></span></div>
+              </div>
+              <div class="unit-body">
+                <p class="blurb__title heading-6">Phát triển cá nhân: </p>
+                <p> Nâng cao kỹ năng mềm như kỹ năng làm việc nhóm, kỹ năng giao tiếp, kỹ năng quản lý thời gian, và khả năng lãnh đạo.</p>
+              </div>
+            </div>
+          </article>
+          <!-- Blurb circle-->
+          <article class="blurb blurb-circle">
+            <div class="unit flex-row unit-spacing-md wow " data-wow-delay="0.3s">
+              <div class="unit-left">
+                <div class="blurb-circle__icon"><span class="icon linearicons-receipt"></span></div>
+              </div>
+              <div class="unit-body">
+                <p class="blurb__title heading-6">Bằng cấp uy tín: </p>
+                <p> Có được bằng thạc sĩ từ một tổ chức giáo dục uy tín, giúp bạn tăng cường khả năng cạnh tranh trong thị trường lao động.</p>
+              </div>
+            </div>
+          </article>
           </div>
         </div>
       </div>
     </section>
     <!-- Một số câu hỏi-->
-      <section class="section-md bg-default text-center">
+      <section class="section-md bg-default text-center"  >
         <div class="container">
           <h4 class="heading-decorated">Một số câu hỏi</h4>
           <div class="row justify-content-md-center justify-content-lg-between row-50 align-items-center text-left wow fadeIn" data-wow-delay="0.3s">
@@ -639,8 +604,9 @@
                       <!-- Bootstrap card-->
                       <div class="card card-custom">
                         <div class="card-custom-heading" id="accordionHeading1" role="tab">
-                          <p class="card-custom-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#accordionCollapse1" aria-controls="accordionCollapse1">
-                            Thời hạn đăng ký và nộp hồ sơ xét tuyển là khi nào và thông tin chi tiết về khóa học?</a>
+                          <p class="card-custom-title" >
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#accordionCollapse1" aria-controls="accordionCollapse1">
+                            <span class="icon linearicons-question-circle"></span>Thời hạn đăng ký và nộp hồ sơ xét tuyển là khi nào và thông tin chi tiết về khóa học?</a>
                           </p>
                         </div>
                         <div class="card-custom-collapse collapse" id="accordionCollapse1" role="tabpanel" aria-labelledby="accordionHeading1">
@@ -650,10 +616,12 @@
                         </div>
                       </div>
                       <!-- Bootstrap card-->
-                      <div class="card card-custom">
+                      <div class="card card-custom" >
                         <div class="card-custom-heading" id="accordionHeading2" role="tab">
-                          <p class="card-custom-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
-                            href="#accordionCollapse2" aria-controls="accordionCollapse2"> Em chuyên ngành lúc đại học là đúng chuyên ngành (Tốt nghiệp loại Khá), 
+                          <p class="card-custom-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
+                            href="#accordionCollapse2" aria-controls="accordionCollapse2"> 
+                            <span class="icon linearicons-question-circle"></span> Em chuyên ngành lúc đại học là đúng chuyên ngành (Tốt nghiệp loại Khá), 
                             , thầy/cô có thể cho em 1 số thông tin tư vấn đăng ký và thi tuyển vào chương trình học Thạc Sỹ của trường mình?</a>
                           </p>
                         </div>
@@ -664,10 +632,10 @@
                         </div>
                       </div>
                       <!-- Bootstrap card-->
-                      <div class="card card-custom">
+                      <div class="card card-custom"  >
                         <div class="card-custom-heading" id="accordionHeading3" role="tab">
                           <p class="card-custom-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
-                            href="#accordionCollapse3" aria-controls="accordionCollapse3">Hiện em chưa có 
+                            href="#accordionCollapse3" aria-controls="accordionCollapse3"> <span class="icon linearicons-question-circle"></span>Hiện em chưa có 
                             bằng ngoại ngữ đạt điều kiện xét tuyển trong danh mục chứng chỉ ngoại ngữ theo quy định. 
                             Vậy trường mình có tổ chức thi và cấp chứng chỉ ngoại ngữ không ạ? 
                       </a>
@@ -682,7 +650,7 @@
               </div>
             </div>
             <div class="col-md-7 col-lg-5">
-              <figure><img src="images/ask.jpg" alt="" width="555" height="500"/>
+              <figure><img src="images/sv7.jpg" alt="" width="555" height="500"/>
               </figure>
             </div>
           </div>
