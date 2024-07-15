@@ -16,67 +16,109 @@
 
     <!--css time line-->
     <style>
-  body{margin-top:20px;}
-.timeline-steps {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap
-}
-
-.timeline-steps .timeline-step {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: 1rem
-}
-
-@media (min-width:768px) {
-    .timeline-steps .timeline-step:not(:last-child):after {
-        content: "";
-        display: block;
-        border-top: .25rem dotted #3b82f6;
-        width: 3.46rem;
-        position: absolute;
-        left: 7.5rem;
-        top: .3125rem
+    .horizontal-timeline .items {
+      border-top: 3px solid #e9ecef;
     }
-    .timeline-steps .timeline-step:not(:first-child):before {
-        content: "";
-        display: block;
-        border-top: .25rem dotted #3b82f6;
-        width: 3.8125rem;
-        position: absolute;
-        right: 7.5rem;
-        top: .3125rem
+
+    .horizontal-timeline .items .items-list {
+      display: flex;
+      position: relative;
+      text-align: center;
+      padding-top: 70px;
+      margin-right: 0;
     }
-}
 
-.timeline-steps .timeline-content {
-    width: 10rem;
-    text-align: center
-}
+    .horizontal-timeline .items .items-list:before {
+      content: "";
+      position: absolute;
+      height: 36px;
+      border-right: 2px dashed #dee2e6;
+      top: 0;
+    }
+    
+    .horizontal-timeline .items .items-list .event-date {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      right: 0;
+      width: 75px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      padding-top: 8px;
+    }
+    @media (min-width: 1140px) {
+      .horizontal-timeline .items .items-list {
+        display: inline-block;
+        width: 24%;
+        padding-top: 45px;
+      }
+    
+      .horizontal-timeline .items .items-list .event-date {
+        top: -40px;
+      }
+    }
 
-.timeline-steps .timeline-content .inner-circle {
-    border-radius: 1.5rem;
-    height: 1rem;
-    width: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #3b82f6
-}
+    body{margin-top:20px;}
+    .timeline-steps {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap
+    }
 
-.timeline-steps .timeline-content .inner-circle:before {
-    content: "";
-    background-color: #3b82f6;
-    display: inline-block;
-    height: 3rem;
-    width: 3rem;
-    min-width: 3rem;
-    border-radius: 6.25rem;
-    opacity: .5
-}
+    .timeline-steps .timeline-step {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 1rem
+    }
+
+    @media (min-width:768px) {
+        .timeline-steps .timeline-step:not(:last-child):after {
+            content: "";
+            display: block;
+            border-top: .25rem dotted #3b82f6;
+            width: 3.46rem;
+            position: absolute;
+            left: 7.5rem;
+            top: .3125rem
+        }
+        .timeline-steps .timeline-step:not(:first-child):before {
+            content: "";
+            display: block;
+            border-top: .25rem dotted #3b82f6;
+            width: 3.8125rem;
+            position: absolute;
+            right: 7.5rem;
+            top: .3125rem
+        }
+    }
+
+    .timeline-steps .timeline-content {
+        width: 10rem;
+        text-align: center
+    }
+
+    .timeline-steps .timeline-content .inner-circle {
+        border-radius: 1.5rem;
+        height: 1rem;
+        width: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3b82f6
+    }
+
+    .timeline-steps .timeline-content .inner-circle:before {
+        content: "";
+        background-color: #3b82f6;
+        display: inline-block;
+        height: 3rem;
+        width: 3rem;
+        min-width: 3rem;
+        border-radius: 6.25rem;
+        opacity: .5
+    }
 
 
   </style>
@@ -241,57 +283,72 @@
       <!-- Time-line-->          
      
       <section class="section-md bg-default text-center">
-          <div class="container">                      
-                <div class="row text-center justify-content-center mb-5">
-                    <div class="col-xl-6 col-lg-8">
-                        <h3 class="font-weight-bold">Thời gian xét tuyển</h3>
-                        <p class="text-muted">Các mốc thời gian xét tuyển hồ sơ chương trình thạc sĩ Phân tích kinh doanh và Quản trị hệ thống thông tin.</p>
-                    </div>
-                </div>
-            
-                <div class="row">
-                    <div class="col">
-                        <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-                            <div class="timeline-step">
-                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-                                    <div class="inner-circle"></div>
-                                    <p class="h6 mt-3 mb-1">2003</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
-                                </div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-                                    <div class="inner-circle"></div>
-                                    <p class="h6 mt-3 mb-1">2004</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
-                                </div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-                                    <div class="inner-circle"></div>
-                                    <p class="h6 mt-3 mb-1">2005</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
-                                </div>
-                            </div>
-                            <div class="timeline-step">
-                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-                                    <div class="inner-circle"></div>
-                                    <p class="h6 mt-3 mb-1">2010</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-                                </div>
-                            </div>
-                            <div class="timeline-step mb-0">
-                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-                                    <div class="inner-circle"></div>
-                                    <p class="h6 mt-3 mb-1">2020</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
-                                </div>
-                            </div>
+        <div class="container">
+          <div class="row justify-content-lg-center">
+            <div class="col-lg-12 col-xl-8">
+              <h3 class="heading-decorated">Thời gian xét tuyển</h3>
+              <p>Timeline tuyển sinh thạc sỹ ngành <b>Phân tích kinh doanh</b> và <b>Quản trị hệ thống thông tin </b>.</p>
+            </div>
+          </div>
+          <!--div class="row row-50"-->
+            <div class="container-fluid py-5">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="horizontal-timeline">
+                    <ul class="list-inline items">
+                      <li class="list-inline-item items-list">
+                        <div class="px-4">
+                          <div class="event-date badge bg-info">6/2024</div>
+                          <h5 class="pt-2">Thông báo tuyển sinh</h5>
+                          <p class="text-muted">Ban hành thông báo tuyển sinh sau đại học đợt 2 năm 2024</p>
+                          <div>
+                            <a href="https://hvnh.edu.vn/gs/vi/tuyen-sinh/phuong-thuc-tuyen-sinh-va-dieu-kien-xet-tuyen-tuyen-sinh-thac-si-470.html" data-mdb-ripple-init class="btn btn-primary btn-sm" target="_blank">Chi tiết</a>
+                          </div>
                         </div>
-                    </div>
+                      </li>
+                      <li class="list-inline-item items-list">
+                        <div class="px-4">
+                          <div class="event-date badge bg-success">7/2024</div>
+                          <h5 class="pt-2">Nộp hồ sơ</h5>
+                          <p class="text-muted">Thí sinh nộp hồ sơ đăng ký online tại đường link dưới đây
+                          </p>
+                          <div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRi2vxEweW69q2bJOLGhKc77HlsnQTs8TvK8cqILb4j5RHww/viewform" data-mdb-ripple-init class="btn btn-primary btn-sm" target="_blank">Nộp hồ sơ</a>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-inline-item items-list">
+                        <div class="px-4">
+                          <div class="event-date badge bg-danger">7/2024</div>
+                          <h5 class="pt-2">Ôn tập</h5>
+                          <p class="text-muted">Đăng  ký  học  bổ  sung  kiến  thức, lớp dự kiến khai giảng ngày 22/7/2024</p>
+                          <div>
+                            <a href="https://hvnh.edu.vn/bavts/vi/thong-bao/thong-bao-mo-lop-bo-sung-kien-thuc-du-tuyen-sau-dai-hoc-dot-22024-170.html" data-mdb-ripple-init class="btn btn-primary btn-sm" target="_blank">Chi tiết</a>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-inline-item items-list">
+                        <div class="px-4">
+                          <div class="event-date badge bg-warning">9/2024</div>
+                          <h5 class="pt-2">Xét tuyển</h5>
+                          <p class="text-muted">Có thể xét tuyển sớm hơn nếu đủ số lượng hồ sơ
+                          </p>
+                          <div>
+                            <a href="https://hvnh.edu.vn/gs/vi/tuyen-sinh/phuong-thuc-tuyen-sinh-va-dieu-kien-xet-tuyen-tuyen-sinh-thac-si-470.html" data-mdb-ripple-init class="btn btn-primary btn-sm" target="_blank">Chi tiết</a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+            
+                  </div>
+            
                 </div>
+              </div>
+            
             </div>
             
+          <!--/div-->
+        </div>
       </section>
       <!-- Phương thức xét tuyển-->
       <section class="section-md bg-default" style="background: #eef4f6;">       
@@ -317,7 +374,7 @@
           <!-- Tab panes -->
           <div class="tab-content">
             <div id="ycc" class="container tab-pane active"><br>
-              <h3>Yêu cầu chung</h3>
+              <!-- <h3>Yêu cầu chung</h3> -->
               <p>a) Đã tốt nghiệp hoặc đã đủ điều kiện công nhận tốt nghiệp đại học (hoặc trình độ tương đương trở lên) ngành đúng, ngành gần với ngành đăng ký dự tuyển; đối với chương trình định hướng nghiên cứu yêu cầu hạng tốt nghiệp từ khá trở lên hoặc có công bố khoa học liên quan đến lĩnh vực sẽ học tập, nghiên cứu;
                 <br>
                 Ngành đúng với ngành dự tuyển bao gồm các ngành trong cùng một nhóm ngành trong Danh mục ngành đào tạo trình độ đại học tại Phụ lục I ban hành kèm theo Thông tư số 09/2022/TT-BGDĐT ngày 06 tháng 6 năm 2022 quy định danh mục thống kê ngành đào tạo của giáo dục đại học.
@@ -336,7 +393,7 @@
 
             </div>
             <div id="xtt" class="container tab-pane fade"><br>
-              <h3>Điều kiện xét tuyển thẳng</h3>
+              <!-- <h3>Điều kiện xét tuyển thẳng</h3> -->
               <p><p class="mb-0">
                 a) Đã tốt nghiệp hoặc đã đủ điều kiện công nhận tốt nghiệp đại học (hoặc trình độ tương đương trở lên) trong thời gian không quá 02 năm tính đến ngày đăng ký dự tuyển, hạng tốt nghiệp từ Khá trở lên, ngành phù hợp với ngành đăng ký dự tuyển;
                 <br>
@@ -350,7 +407,7 @@
             </p>
             </div>
             <div id="xths" class="container tab-pane fade"><br>
-              <h3>Điều kiện xét tuyển theo hồ sơ</h3>
+              <!-- <h3>Điều kiện xét tuyển theo hồ sơ</h3> -->
               <p>a) Phương thức xét tuyển theo hồ sơ áp dụng đối với những ứng viên không đáp ứng điều kiện xét tuyển thẳng quy định tại mục 4.2 trên.
                 <br>
                 b) Ứng viên phải làm 01 bài luận liên quan đến ngành đăng ký dự tuyển. Quy định cụ thể về bài luận xem tại Phụ lục 4 trong thông báo tuyển sinh sau đại học.
@@ -384,7 +441,7 @@
                 <li><a data-isotope-filter="Category 2" data-isotope-group="gallery" href="#">Xét tuyển</a></li>
               </ul>
               <div>
-                <img src="images/Phantichkinhdoanh.jpg">
+                <img src="images/itde/Phân tích kinh doanh.png">
               </div>
             </div>
           </div>
@@ -413,7 +470,7 @@
                 <li><a data-isotope-filter="Category 2" data-isotope-group="gallery" href="#">Xét tuyển</a></li>
               </ul>
               <div>
-                <img src="images/Phantichkinhdoanh.jpg">
+                <img src="images/itde/Quản trị hệ thống thông tin.png">
               </div>
             </div>
           </div>
@@ -424,77 +481,73 @@
       <section class="text-center section-xxl fullwidth-page fullwidth-page_mod-1 bg-accent-gradient particles-js-wrap context-dark">
         <div id="particles-js"></div>
         <div class="container">
-          <h2>Khoa CNTT&KTS - Học viện Ngân hàng</h2>
-          <h5 class="text-width-3 block-centered">Rất vui được chào đón các thành viên gia nhập cộng đồng ITDE - Học viện ngân hàng</h5>
+          <h2>Khoa Công nghệ thông tin và Kinh tế số <br> Học viện Ngân hàng</h2>
+          <h5 class="text-width-3 block-centered">Thành lập từ năm 2008, tiền thân là Khoa Hệ thống thông tin quản lý, chúng tôi đã đào tạo nhiều thế hệ sinh viên xuất sắc.</h5>
           <div class="group-lg group-middle"><a class="button button-black" href="https://itde.hvnh.edu.vn/"> Tìm hiểu về chúng tôi </a></div>
         </div>
       </section>
       <!-- Các hoạt động của khoa-->
       <section class="section-md bg-gray-lighter text-center" id="features">
         <div class="container">
-          <h4>Core Features</h4>
+          <h4>Đội ngũ giảng viên</h4>
           <div class="row justify-content-center row-30">
-            <div class="col-6 col-sm-3 col-lg-2">
+            <div class="col-lg-3 col-lg-2">
                     <div class="blurb-mini wow fadeInLeft" data-wow-delay="0.4s">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-48-40x40.png" alt=""></div>
-                      <div class="caption">Swiper Slider</div>
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/thumb_20240108_phan_thanh_du_c.jpg" alt=""></div>
+                      <div class="caption"><h3>TS. Phan Thanh Đức</h3></div>
                     </div>
             </div>
-            <div class="col-6 col-sm-3 col-lg-2">
+            <div class="col-lg-3 col-lg-2">
                     <div class="blurb-mini wow fadeInLeft" data-wow-delay="0.2s">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-47-38x47.png" alt=""></div>
-                      <div class="caption">Owl Carousel</div>
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/d2769f10_Thiết kế chưa có tên (2).png" alt=""></div>
+                      <div class="caption"><h3>PGS. TS. Trần Việt Dũng</h3></div>
                     </div>
             </div>
-            <div class="col-6 col-sm-3 col-lg-2">
+            <div class="col-lg-3 col-lg-2">
                     <div class="blurb-mini wow fadeInUp">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-50-48x36.png" alt=""></div>
-                      <div class="caption">Parallax</div>
-                    </div>
-            </div>
-            <div class="col-6 col-sm-3 col-lg-2">
-                    <div class="blurb-mini wow fadeInRight">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-49-41x41.png" alt=""></div>
-                      <div class="caption">Video Background</div>
-                    </div>
-            </div>
-            <div class="col-6 col-sm-3 col-lg-2">
-                    <div class="blurb-mini wow fadeInRight" data-wow-delay="0.2s">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-57-34x34.png" alt=""></div>
-                      <div class="caption">RD Event Calendar</div>
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/Nguyen-Hoai-Nam.jpg" alt=""></div>
+                      <div class="caption"><h3>PGS. TS. Nguyễn Hoài Nam</h3></div>
                     </div>
             </div>
             <div class="col-12 d-none d-xl-flex"></div>
-            <div class="col-6 col-sm-3 col-lg-2">
-                    <div class="blurb-mini wow fadeInLeft" data-wow-delay="0.4s">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-58-34x32.png" alt=""></div>
-                      <div class="caption">Mail Form</div>
+            <div class="col-lg-3 col-lg-2">
+                    <div class="blurb-mini wow fadeInRight">
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/9b55db38_Truong Thi Thuy Duong.jpg" alt=""></div>
+                      <div class="caption"><h3>PGS. TS. Trương Thị Thùy Dương</h3></div>
                     </div>
             </div>
-            <div class="col-6 col-sm-3 col-lg-2">
-                    <div class="blurb-mini wow fadeInLeft" data-wow-delay="0.2s">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-55-40x40.png" alt=""></div>
-                      <div class="caption">Bootstrap</div>
-                    </div>
-            </div>
-            <div class="col-6 col-sm-3 col-lg-2"> 
-                    <div class="blurb-mini wow fadeInUp">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-63-34x34.png" alt=""></div>
-                      <div class="caption">Gallery (Isotope) (Hover Effects)</div>
-                    </div>
-            </div>
-            <div class="col-6 col-sm-3 col-lg-2">
+            <div class="col-lg-3 col-lg-2">
                     <div class="blurb-mini wow fadeInRight" data-wow-delay="0.2s">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-62-38x38.png" alt=""></div>
-                      <div class="caption">Google Fonts</div>
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/thumb_20240108_bu_i_thi_ho_ng_nhung.jpg" alt=""></div>
+                      <div class="caption"><h3>TS. Bùi Thị Hồng Nhung</h3></div>
+                    </div>
+            </div>            
+            <div class="col-lg-3 col-lg-2">
+                    <div class="blurb-mini wow fadeInLeft" data-wow-delay="0.4s">
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/thumb_20240108_chu_thi_ho_ng_ha_i.jpg" alt=""></div>
+                      <div class="caption"><h3>TS. Chu Thị Hồng Hải</h3></div>
                     </div>
             </div>
-            <div class="col-6 col-sm-3 col-lg-2">
-                    <div class="blurb-mini wow fadeInRight" data-wow-delay="0.4s">
-                      <div class="img-wrap bg-white"><img src="images/landing/landing-69-47x18.png" alt=""></div>
-                      <div class="caption">Animate CSS, WOW Animation</div>
+            <div class="col-12 d-none d-xl-flex"></div>
+            <div class="col-lg-3 col-lg-2">
+                    <div class="blurb-mini wow fadeInLeft" data-wow-delay="0.2s">
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/thumb_20240108_vu_tro_ng_sinh.jpg" alt=""></div>
+                      <div class="caption"><h3>TS. Vũ Trọng Sinh</h3></div>
                     </div>
             </div>
+            <div class="col-lg-3 col-lg-2"> 
+                    <div class="blurb-mini wow fadeInUp">
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/thumb_20240108_dinh_tro_ng_hie_u.jpg" alt=""></div>
+                      <div class="caption"><h3>TS. Đinh Trọng Hiếu</h3></div>
+                    </div>
+            </div>
+            <div class="col-lg-3 col-lg-2">
+                    <div class="blurb-mini wow fadeInRight" data-wow-delay="0.2s">
+                      <div class="img-wrap bg-white"><img src="images/itde/anh_gv/3e82cd14_Lê Hải Trung.jpg" alt=""></div>
+                      <div class="caption"><h3>TS. Lê Hải Trung</h3></div>
+                    </div>
+            </div>
+            
           </div>
         </div>
       </section>
