@@ -2552,6 +2552,7 @@ a.thumbnail-classic-title:hover {
 .unit-spacing-md > * {
 	margin-bottom: 30px;
 	margin-left: 15px;
+	text-align: justify;
 }
 
 .unit-spacing-lg {
