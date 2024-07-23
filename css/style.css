@@ -11938,4 +11938,8 @@ a {
 	font-size: 1em;
 	text-rendering: optimizeSpeed;
 }
+
+#ycc p, #xtt p, #xths p{
+	margin-top: 0px;
+}
 /* SinhVT */
